@@ -69,12 +69,6 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        DeclareLaunchArgument('sub_msg_to_robot_topic_name', default_value='/human_navigation/message/to_robot'),
-        DeclareLaunchArgument('sum_msg_task_info_topic_name', default_value='/human_navigation/message/task_info'),
-        DeclareLaunchArgument('sub_msg_avatar_status_topic_name', default_value='/human_navigation/message/avatar_status'),
-        DeclareLaunchArgument('sum_msg_object_status_topic_name', default_value='/human_navigation/message/object_status'),
-        DeclareLaunchArgument('pub_msg_to_moderator_topic_name', default_value='/human_navigation/message/to_moderator'),
-        DeclareLaunchArgument('pub_msg_guidance_message_topic_name', default_value='/human_navigation/message/guidance_message'),
         human_navigation_node,
         human_navigation_hsr_key_teleop_node,
         sigverse_ros_bridge_launch_file,
