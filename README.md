@@ -1,46 +1,135 @@
+<a name="readme-top"></a>
+
+[JA](README.md) | [EN](README.en.md)
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![License: Custom][license-shield]][license-url]
+
+
 # ROS2 Package for Human Navigation
+<!-- 目次 -->
+<details>
+  <summary>目次</summary>
+  <ol>
+    <li>
+      <a href="#概要">概要</a>
+    </li>
+    <li>
+      <a href="#セットアップ">セットアップ</a>
+      <ul>
+        <li><a href="#環境条件">環境条件</a></li>
+        <li><a href="#インストール方法">インストール方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#実行操作方法">実行・操作方法</a></li>
+    <li><a href="#マイルストーン">マイルストーン</a></li>
+    <!-- <li><a href="#contributing">Contributing</a></li> -->
+    <li><a href="#ライセンス">ライセンス</a></li> 
+    <li><a href="#参考文献">参考文献</a></li>
+  </ol>
+</details>
 
-This project is ROS2 package for the Human Navigation task of the RoboCup@Home Simulation.
+<!-- レポジトリの概要 -->
+## 概要
 
-See also [wiki page](https://github.com/RoboCupatHomeSim/human-navigation-ros/wiki).
+このプロジェクトは，RoboCup@Home シミュレーションの HumanNavigation タスク用の ROS2 パッケージです．
 
-## Prerequisites
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
-Same as below for OS and ROS2 version.  
-https://github.com/RoboCupatHomeSim/documents/blob/master/SoftwareManual/Environment.md#ubuntu-pc
+<!-- セットアップ -->
+## セットアップ
 
-## How to Install
+ここで，本レポジトリのセットアップ方法について説明します．
 
-### Install Rosbridge Server
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
-Please see below.  
-http://wiki.ros.org/rosbridge_suite
 
-### Install SIGVerse Rosbridge Server
+### 環境条件
 
-Please see below.  
-https://github.com/SIGVerse/ros_package/tree/humble-devel/sigverse_ros_bridge
+正常動作のため，以下の必要な環境を整えてください．
 
-### Install ROS Package of Human Navigation
+| System  | Version |
+| ------------- | ------------- |
+| Ubuntu | 22.04 (Jammy Jellyfish) |
+| ROS | Humble Hawksbill |
+| Python | 3.10 |
 
-```bash:
-$ cd ~/colcon_ws/src
-$ git clone -b humble-devel https://github.com/RoboCupatHomeSim/human-navigation-ros.git
-$ cd ..
-$ colcon build
-```
+[HSR Sim Common](https://github.com/TeamSOBITS/hsr_sim_common)パッケージをインストールしていない場合はインストールしてください．
 
-## How to Execute
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
-### How to Execute Sample ROS2 Node
 
-This sample ROS2 node communicates with the Unity application of Human Navigation.  
-HSR can be operated with keyboard operation.
+### インストール方法
 
-```bash:
-$ ros2 launch human_navigation_ros sample.launch.py
-```
+1. ROSの`src`フォルダに移動します．
+   ```sh
+   cd ~/colcon_ws/src/
+   ```
+2. 本レポジトリをcloneします．
+   ```sh
+   git clone -b humble-devel https://github.com/TeamSOBITS/human-navigation-ros.git
+   ```
+3. パッケージをコンパイルします．
+   ```sh
+   cd ~/colcon_ws/
+   ```
+   ```sh
+   colcon build --symlink-install
+   ```
+   ```sh
+   source ~/colcon_ws/install/setup.sh
+   ```
 
-## License
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
 
-This project is licensed under the SIGVerse License - see the LICENSE.txt file for details.
+
+<!-- 実行・操作方法 -->
+## 実行・操作方法
+
+これは，Handyman アプリケーションと通信するシンプルな ROS2 ノードです．
+
+  ```sh:
+  ros2 launch human_navigation_ros sample.launch.py​​
+  ```
+
+## ライセンス
+
+このプロジェクトは SIGVerse ライセンスに基づいてライセンスされています．詳細については，LICENSE.txt ファイルを参照してください．
+
+
+ <p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
+<!-- マイルストーン -->
+## マイルストーン
+
+現時点のバッグや新規機能の依頼を確認するために[Issueページ](issues-url) をご覧ください．
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
+<!-- 参考文献 -->
+## 参考文献
+
+* [human-navigation-ros](https://github.com/RoboCupatHomeSim/human-navigation-ros)
+* [OS and ROS2 version](https://github.com/RoboCupatHomeSim/documents/blob/master/SoftwareManual/Environment.md#ubuntu-pc)
+* [rosbridge_suite](http://wiki.ros.org/rosbridge_suite)
+* [sigverse_ros_bridge](https://github.com/SIGVerse/ros_package/tree/humble-devel/sigverse_ros_bridge)
+* [wiki page](https://github.com/RoboCupatHomeSim/human-navigation-ros/wiki)
+
+<p align="right">(<a href="#readme-top">上に戻る</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/TeamSOBITS/human-navigation-ros.svg?style=for-the-badge
+[contributors-url]: https://github.com/TeamSOBITS/human-navigation-ros/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/TeamSOBITS/human-navigation-ros.svg?style=for-the-badge
+[forks-url]: https://github.com/TeamSOBITS/human-navigation-ros/network/members
+[stars-shield]: https://img.shields.io/github/stars/TeamSOBITS/human-navigation-ros.svg?style=for-the-badge
+[stars-url]: https://github.com/TeamSOBITS/human-navigation-ros/stargazers
+[issues-shield]: https://img.shields.io/github/issues/TeamSOBITS/human-navigation-ros.svg?style=for-the-badge
+[issues-url]: https://github.com/TeamSOBITS/human-navigation-ros/issues
+[license-shield]: https://img.shields.io/badge/License-SIGVerse_License-orange.svg?style=for-the-badge
+[license-url]: https://github.com/TeamSOBITS/human-navigation-ros/blob/humble-devel/license/LICENSE.txt
+
